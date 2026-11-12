@@ -1,0 +1,130 @@
+[
+ {
+  "model": "llama3.1-8b-ctx8k",
+  "flagged_cases": 10,
+  "fallback_calls": 14,
+  "fallback_step2_outcomes": {
+   "succ": 13,
+   "unsucc": 0,
+   "invalid": 1
+  },
+  "conditions": {
+   "none": {
+    "instances_kept": 280,
+    "asr_valid_all": 85.5,
+    "asr_valid_excl": 84.7,
+    "asr_all_all": 55.0,
+    "asr_all_excl": 53.2
+   },
+   "m1": {
+    "instances_kept": 280,
+    "asr_valid_all": 87.1,
+    "asr_valid_excl": 87.0,
+    "asr_all_all": 40.3,
+    "asr_all_excl": 38.2,
+    "diff_vs_none_pp": -15.0,
+    "diff_ci": [
+     -21.8,
+     -8.2
+    ],
+    "p_perm": 0.0,
+    "clusters": 140,
+    "p_holm": 0.0
+   },
+   "m3": {
+    "instances_kept": 280,
+    "asr_valid_all": 8.4,
+    "asr_valid_excl": 5.0,
+    "asr_all_all": 3.0,
+    "asr_all_excl": 1.8,
+    "diff_vs_none_pp": -51.4,
+    "diff_ci": [
+     -58.2,
+     -44.3
+    ],
+    "p_perm": 0.0,
+    "clusters": 140,
+    "p_holm": 0.0
+   },
+   "m1m3": {
+    "instances_kept": 280,
+    "asr_valid_all": 6.5,
+    "asr_valid_excl": 0.0,
+    "asr_all_all": 1.0,
+    "asr_all_excl": 0.0,
+    "diff_vs_none_pp": -53.2,
+    "diff_ci": [
+     -60.0,
+     -46.4
+    ],
+    "p_perm": 0.0,
+    "clusters": 140,
+    "p_holm": 0.0
+   }
+  }
+ },
+ {
+  "model": "qwen2.5-7b-ctx8k",
+  "flagged_cases": 3,
+  "fallback_calls": 5,
+  "fallback_step2_outcomes": {
+   "succ": 3,
+   "unsucc": 2,
+   "invalid": 0
+  },
+  "conditions": {
+   "none": {
+    "instances_kept": 294,
+    "asr_valid_all": 40.5,
+    "asr_valid_excl": 39.6,
+    "asr_all_all": 25.7,
+    "asr_all_excl": 25.2
+   },
+   "m1": {
+    "instances_kept": 294,
+    "asr_valid_all": 31.1,
+    "asr_valid_excl": 30.7,
+    "asr_all_all": 20.3,
+    "asr_all_excl": 20.1,
+    "diff_vs_none_pp": -5.1,
+    "diff_ci": [
+     -9.9,
+     0.0
+    ],
+    "p_perm": 0.0584,
+    "clusters": 147,
+    "p_holm": 0.0584
+   },
+   "m3": {
+    "instances_kept": 294,
+    "asr_valid_all": 0.9,
+    "asr_valid_excl": 0.5,
+    "asr_all_all": 0.7,
+    "asr_all_excl": 0.3,
+    "diff_vs_none_pp": -24.8,
+    "diff_ci": [
+     -30.3,
+     -19.4
+    ],
+    "p_perm": 0.0,
+    "clusters": 147,
+    "p_holm": 0.0
+   },
+   "m1m3": {
+    "instances_kept": 294,
+    "asr_valid_all": 0.5,
+    "asr_valid_excl": 0.0,
+    "asr_all_all": 0.3,
+    "asr_all_excl": 0.0,
+    "diff_vs_none_pp": -25.2,
+    "diff_ci": [
+     -30.6,
+     -19.7
+    ],
+    "p_perm": 0.0,
+    "clusters": 147,
+    "p_holm": 0.0
+   }
+  }
+ }
+]

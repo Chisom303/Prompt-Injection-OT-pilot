@@ -1,0 +1,5 @@
+This folder contains unmodified files from InjecAgent (https://github.com/uiuc-kang-lab/InjecAgent),
+commit f19c9f2 (2 July 2024), redistributed under its MIT license (see LICENCE, Copyright (c) 2023 Qiusi Zhan).
+Included: data/tools.json, data/attacker_simulated_responses.json, the four data/test_cases_*.json files,
+src/output_parsing.py and src/prompts/agent_prompts.py. Cite: Zhan, Liang, Ying, Kang (2024), InjecAgent:
+Benchmarking indirect prompt injections in tool-integrated large language model agents, Findings of ACL 2024.

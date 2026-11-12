@@ -1,0 +1,5 @@
+# Needed to reproduce the paper's numbers with reproduce.py (Python 3.10 or newer).
+# The published results regenerate identically with numpy 1.24 to 2.5 and matplotlib 3.7 to 3.11.
+numpy>=1.24
+# matplotlib only draws the two plots; without it the tables and all numbers are still reproduced.
+matplotlib>=3.7

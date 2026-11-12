@@ -1,0 +1,8 @@
+# Needed only to rerun the language models with run_experiment.py (Python 3.10 or newer).
+# Exact versions used for the published run are recorded in results/raw/*/run_info.json
+# (openai 2.54.0, nltk 3.9.1, numpy 2.1.3, matplotlib 3.10.0).
+openai>=1.30
+nltk>=3.8
+numpy>=1.24
+matplotlib>=3.7
+psutil>=5.9

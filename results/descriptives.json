@@ -1,0 +1,56 @@
+[
+ {
+  "model": "llama3.1-8b-ctx8k",
+  "invalid_m0": 107,
+  "invalid_m0_recall": 77,
+  "invalid_reasons_m0": {
+   "Recalling user tool with fabricated observation": 59,
+   "Recalling of user tool with no next step": 17,
+   "Action not in availabel tools": 15,
+   "call GmailSendEmail before tool": 12,
+   "too much actions": 2,
+   "Recalling of user tool with no observation": 1,
+   "Action Input is not {}": 1
+  },
+  "max_prompt_tokens": {
+   "none": 3296,
+   "m1": 3401,
+   "m3": 2566,
+   "m1m3": 2671
+  },
+  "second_step_calls": 112,
+  "fallback_calls": 14,
+  "fallback_cases": 10,
+  "rerun_check": {
+   "instances": 30,
+   "identical_outputs": 7,
+   "share_identical": 0.233
+  }
+ },
+ {
+  "model": "qwen2.5-7b-ctx8k",
+  "invalid_m0": 110,
+  "invalid_m0_recall": 85,
+  "invalid_reasons_m0": {
+   "Recalling of user tool with no observation": 63,
+   "Recalling user tool with fabricated observation": 22,
+   "call GmailSendEmail before tool": 19,
+   "Action not in availabel tools": 5,
+   "Action Input is not {}": 1
+  },
+  "max_prompt_tokens": {
+   "none": 3326,
+   "m1": 3431,
+   "m3": 2596,
+   "m1m3": 2701
+  },
+  "second_step_calls": 64,
+  "fallback_calls": 5,
+  "fallback_cases": 3,
+  "rerun_check": {
+   "instances": 30,
+   "identical_outputs": 6,
+   "share_identical": 0.2
+  }
+ }
+]
