@@ -1,0 +1,7 @@
+# Keep text files byte-identical on every operating system (Windows Git would otherwise convert line endings).
+* text=auto eol=lf
+# CSV files are written with CRLF by Python's csv module; store them exactly as they are.
+*.csv -text
+*.pdf binary
+*.png binary
+*.xlsx binary
