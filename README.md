@@ -1,13 +1,12 @@
 # Indirect prompt injection in LLM agents for critical-infrastructure operations: pilot evaluation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24212460.svg)](https://doi.org/10.5281/zenodo.24212460)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24222841.svg)](https://doi.org/10.5281/zenodo.24222841)
 
 Code, data and raw model outputs for the pilot evaluation in the paper
 *Indirect prompt injection in LLM agents for critical-infrastructure operations: An attack-surface framework and exploratory benchmark study*.
 
-Archived release: Alozie, C. (2026). *Chisom303/Prompt-Injection-OT-pilot: v1.0.0 - First release* (Version v1.0.0)
-[Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24212460. Citation metadata are in `CITATION.cff`.
-
+Archived release: Alozie, C. (2026). *Prompt-Injection-OT-pilot: Code, data and raw model outputs for a pilot evaluation of prompt-injection mitigations* (Version v1.0.2)
+[Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24222841. Citation metadata are in `CITATION.cff`.
 The pilot measures three mitigations on a stratified sample of the InjecAgent benchmark with two open-weight models
 (Llama 3.1 8B Instruct and Qwen2.5 7B Instruct): provenance tagging (M1), least privilege (M3) and a tool-name
 allowlist gate (M2), against no defence (M0).
