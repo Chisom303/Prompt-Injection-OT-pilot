@@ -1,13 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite the archived release below and the accompanying paper."
-title: "Chisom303/Prompt-Injection-OT-pilot: v1.0.0 - First release"
+message: "If you use this software or data, please cite it using the metadata below and cite the accompanying paper."
+title: "Prompt-Injection-OT-pilot: Code, data and raw model outputs for a pilot evaluation of prompt-injection mitigations"
 type: software
 authors:
   - family-names: Alozie
     given-names: Chisom
-version: v1.0.0
-date-released: 2026-11-14
-doi: 10.5281/zenodo.24212460
 repository-code: "https://github.com/Chisom303/Prompt-Injection-OT-pilot"
 license: MIT
 keywords:
