@@ -25,6 +25,36 @@
    "instances": 30,
    "identical_outputs": 7,
    "share_identical": 0.233
+  },
+  "output_cap": {
+   "none": {
+    "attack_instances": 26,
+    "attack_invalid": 13,
+    "attack_with_action_line": 26,
+    "benign_instances": 11,
+    "benign_without_final_answer": 10
+   },
+   "m1": {
+    "attack_instances": 25,
+    "attack_invalid": 18,
+    "attack_with_action_line": 25,
+    "benign_instances": 7,
+    "benign_without_final_answer": 7
+   },
+   "m3": {
+    "attack_instances": 59,
+    "attack_invalid": 49,
+    "attack_with_action_line": 58,
+    "benign_instances": 8,
+    "benign_without_final_answer": 8
+   },
+   "m1m3": {
+    "attack_instances": 26,
+    "attack_invalid": 23,
+    "attack_with_action_line": 26,
+    "benign_instances": 6,
+    "benign_without_final_answer": 5
+   }
   }
  },
  {
@@ -51,6 +81,36 @@
    "instances": 30,
    "identical_outputs": 6,
    "share_identical": 0.2
+  },
+  "output_cap": {
+   "none": {
+    "attack_instances": 2,
+    "attack_invalid": 2,
+    "attack_with_action_line": 2,
+    "benign_instances": 1,
+    "benign_without_final_answer": 0
+   },
+   "m1": {
+    "attack_instances": 8,
+    "attack_invalid": 3,
+    "attack_with_action_line": 8,
+    "benign_instances": 0,
+    "benign_without_final_answer": 0
+   },
+   "m3": {
+    "attack_instances": 5,
+    "attack_invalid": 4,
+    "attack_with_action_line": 5,
+    "benign_instances": 0,
+    "benign_without_final_answer": 0
+   },
+   "m1m3": {
+    "attack_instances": 4,
+    "attack_invalid": 4,
+    "attack_with_action_line": 4,
+    "benign_instances": 4,
+    "benign_without_final_answer": 0
+   }
   }
  }
 ]

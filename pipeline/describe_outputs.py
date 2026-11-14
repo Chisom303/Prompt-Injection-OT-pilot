@@ -9,17 +9,40 @@ For each model:
   max_prompt_tokens        longest prompt per condition (attack instances)
   second_step_calls        data-stealing second steps across M0, M1, M3 and M1+M3
   fallback_calls / fallback_cases   second steps that used a fallback cached tool response, and the cases involved
-  rerun_check              the repeat of the first 30 M0 base instances (identical output text)
+  rerun_check              the repeat of the first 30 M0 base instances (identical output text); only the count of
+                           identical outputs was stored during the run, not the repeated output texts
+  output_cap               first-step outputs that reached the 512-token output limit, per condition: attack
+                           instances, how many of them were scored invalid, how many contain an Action line (so the
+                           scored first action was emitted before the limit), and benign instances, how many of them
+                           lack a final answer (and therefore count as not completed)
 
 Usage: python describe_outputs.py RAW_DIR [RAW_DIR ...] [--out OUT_DIR]   (writes OUT_DIR/descriptives.json)
 """
-import argparse, collections, json, os
+import argparse, collections, json, os, re
 
 COND = ["none", "m1", "m3", "m1m3"]
+MAX_TOKENS = 512  # output limit used in the published run (see run_info.json)
 
 
 def rows(model_dir, cond, settings=("base", "enhanced")):
     return [json.loads(l) for s in settings for l in open(os.path.join(model_dir, f"{cond}_{s}.jsonl"))]
+
+
+def at_cap(r):
+    return ((r.get("usage") or {}).get("completion_tokens") or 0) >= MAX_TOKENS
+
+
+def output_cap(model_dir):
+    res = {}
+    for c in COND:
+        att = [r for r in rows(model_dir, c) if at_cap(r)]
+        ben = [r for r in rows(model_dir, c, ("benign",)) if at_cap(r)]
+        res[c] = {"attack_instances": len(att),
+                  "attack_invalid": sum(r["eval"] == "invalid" for r in att),
+                  "attack_with_action_line": sum(bool(re.search(r"Action\s*:", r.get("output") or "")) for r in att),
+                  "benign_instances": len(ben),
+                  "benign_without_final_answer": sum("Final Answer:" not in (r.get("output") or "") for r in ben)}
+    return res
 
 
 def describe(model_dir):
@@ -43,6 +66,7 @@ def describe(model_dir):
         "fallback_calls": len(fb),
         "fallback_cases": len({(r["attack"], r["case_index"]) for r in fb}),
         "rerun_check": json.load(open(os.path.join(model_dir, "rerun_check.json"))),
+        "output_cap": output_cap(model_dir),
     }
 
 

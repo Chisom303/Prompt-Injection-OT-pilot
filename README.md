@@ -1,7 +1,12 @@
-# Prompt injection against LLM agents in critical-infrastructure operations: pilot evaluation
+# Indirect prompt injection in LLM agents for critical-infrastructure operations: pilot evaluation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24212460.svg)](https://doi.org/10.5281/zenodo.24212460)
 
 Code, data and raw model outputs for the pilot evaluation in the paper
-*Prompt injection against LLM agents in critical-infrastructure operations: A framework of attack surfaces and mitigations, with a pilot evaluation*.
+*Indirect prompt injection in LLM agents for critical-infrastructure operations: An attack-surface framework and exploratory benchmark study*.
+
+Archived release: Alozie, C. (2026). *Chisom303/Prompt-Injection-OT-pilot: v1.0.0 - First release* (Version v1.0.0)
+[Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24212460. Citation metadata are in `CITATION.cff`.
 
 The pilot measures three mitigations on a stratified sample of the InjecAgent benchmark with two open-weight models
 (Llama 3.1 8B Instruct and Qwen2.5 7B Instruct): provenance tagging (M1), least privilege (M3) and a tool-name
@@ -14,13 +19,14 @@ You need **Python 3.10 or newer**. Nothing else is downloaded: the benchmark dat
 **Option A: on your computer**
 
 ```bash
-git clone https://github.com/Chisom303/prompt-injection-ot-pilot.git   # or download the ZIP and unzip it
-cd prompt-injection-ot-pilot
+git clone https://github.com/Chisom303/Prompt-Injection-OT-pilot.git   # or download the ZIP and unzip it
+cd Prompt-Injection-OT-pilot
 python -m pip install -r requirements.txt
 python reproduce.py
 ```
 
-On some systems the command is `python3` instead of `python`. If you prefer an isolated environment, run
+On some systems the command is `python3` instead of `python`. If you download the ZIP instead, the unzipped folder is named `Prompt-Injection-OT-pilot-main` (or after the release
+tag); run the last two commands inside it. If you prefer an isolated environment, run
 `python -m venv .venv`, activate it (`.venv\Scripts\activate` on Windows, `source .venv/bin/activate` elsewhere),
 then the last two commands.
 
@@ -78,9 +84,11 @@ notebooks/
   reproduce_in_colab.ipynb  run reproduce.py in the browser
   run_on_kaggle.ipynb     rerun the models on a free Kaggle GPU
 results/                  published results (read-only)
-  raw/<model>/            raw outputs: one JSON record per instance, plus sample_indices.json, run_info.json, rerun_check.json
+  raw/<model>/            raw outputs: one JSON record per instance, plus sample_indices.json, run_info.json and
+                          rerun_check.json (count of identical outputs in the 30-instance repeat; the repeat texts were not stored)
   summary.json, summary.csv, tables.md, sensitivity_fallback.json, descriptives.json, fig3_*.pdf/png, fig4_*.pdf/png
   SHA256SUMS              checksums of every file in results/
+CITATION.cff              citation metadata for the archived release
 docs/sample_overview.xlsx the 150 sampled cases and 100 benign cases, for inspection (not read by the code)
 requirements.txt          packages for reproduce.py (numpy; matplotlib for the plots)
 requirements-run.txt      packages for run_experiment.py
@@ -95,7 +103,7 @@ requirements-run.txt      packages for run_experiment.py
 | Table 6, results by setting and subset | `tables.md` (Table 6), `summary.json` | same |
 | Fig. 3, attack success among valid outputs | `summary.json`; plot `fig3_attack_success.pdf` | same |
 | Fig. 4, benign completion rate | `summary.json`; plot `fig4_benign_completion.pdf` | same |
-| Section 6.1, invalid outputs and repeat check | `descriptives.json`, `raw/<model>/rerun_check.json` | `pipeline/describe_outputs.py`, `pipeline/pilot.py` |
+| Section 6.1, invalid outputs, repeat check and outputs that reached the 512-token limit | `descriptives.json` (`output_cap`), `raw/<model>/rerun_check.json` | `pipeline/describe_outputs.py`, `pipeline/pilot.py` |
 | Section 6.6, latency, tokens, fallback responses and sensitivity analysis | `summary.json`, `descriptives.json`, `sensitivity_fallback.json` | `pipeline/analyze.py`, `pipeline/describe_outputs.py`, `pipeline/sensitivity_fallback.py` |
 | Section 5.4, models and environment | `raw/<model>/run_info.json` | `pipeline/pilot.py` |
 
